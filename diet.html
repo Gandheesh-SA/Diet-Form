@@ -1,0 +1,328 @@
+<html>
+<head>
+    <title>Diet Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Montserrat", sans-serif;
+            margin: 30px;
+            background-color: #f9f9f9;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0px 0px 10px #ccc;
+        }
+
+        em{
+            color: yellowgreen;
+        }
+        h2 {
+            text-align: center;
+            
+        }
+        label, strong {
+            font-size: 14px;
+            font-weight: bolder;
+            
+        }
+        input[type=text], input[type=number], input[type=date], select, textarea, input[type=time] {
+            width: 95%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .section {
+            margin-bottom: 15px;
+        }
+        .buttons {
+            text-align: center;
+        }
+        .prev{
+            background-color: blue;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button.reset {
+            background-color: #dc3545;
+        }
+        .tab {
+            display: none;
+        }
+        .tab.active {
+            display: block;
+        }
+
+        .guidelines-info table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.guidelines-info td,
+.guidelines-info th {
+    padding: 10px;
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+}
+
+.guidelines-info tr td.emoji {
+    width: 40px;
+    font-size: 42px;
+    text-align: center;
+}
+
+.guidelines-info th {
+    width: 40%;
+    color: #333;
+    font-weight: 600;
+}
+
+.guidelines-info td:last-child {
+    width: 50%;
+}
+
+.purpose{
+    color: #dc3545;
+}
+
+     
+    </style>
+</head>
+<body>
+    <h2>Diet Plan Form</h2>
+    <form id="dietForm">
+
+            <div class="tab active" id="tab1">
+          <div class="section">
+    <h3>Key Health Guidelines</h3>
+    <div class="guidelines">
+    
+        <div class="guidelines-info">
+            <table>
+                <tr>
+                    <td class="emoji">⚖️</td>
+                    <th>BMI (Body Mass Index)</th>
+                    <td>18.5 - 24.9 (Normal)</td>
+                </tr>
+                <tr>
+                    <td class="emoji">🚶</td>
+                    <th>Daily Steps</th>
+                    <td>7,000 – 10,000 steps</td>
+                </tr>
+                <tr>
+                    <td class="emoji">❤️</td>
+                    <th>Heart Rate</th>
+                    <td>60 – 100 bpm</td>
+                </tr>
+                <tr>
+                    <td class="emoji">🩺</td>
+                    <th>Blood Pressure</th>
+                    <td>~120/80 mmHg</td>
+                </tr>
+                <tr>
+                    <td class="emoji">💧</td>
+                    <th>Water Intake</th>
+                    <td>2 – 3 L/day</td>
+                </tr>
+                <tr>
+                    <td class="emoji">🛌</td>
+                    <th>Sleep Duration</th>
+                    <td>7 – 8 hrs/night</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+            <div class="buttons">
+                <button type="button" onclick="nextTab(2)">Next</button>
+            </div>
+        </div>
+
+        <div class="tab" id="tab2">
+            <div class="section">
+                <label>Full Name:</label>
+                <input type="text" name="fullName" required>
+                <label>Age:</label>
+                <input type="number" name="age">
+                <label>Gender:</label>
+                <select name="gender">
+                    <option value="">Select</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+                <label>Height (cm):</label>
+                <input type="number" name="height">
+                <label>Weight (kg):</label>
+                <input type="number" name="weight">
+                <label>Blood Pressure:</label>
+                <input type="text" name="bp" placeholder="e.g., 120/80">
+                <label>Blood Sugar (if known):</label>
+                <input type="text" name="sugar" placeholder="Fasting/PP"><br>
+    
+                <label>Any Medical Conditions:</label>
+                <textarea name="conditions" rows="3"></textarea>
+            </div>
+            <div class="buttons">
+                <button type="button" class="prev" onclick="prevTab(1)">Previous</button>
+
+                <button type="button" onclick="nextTab(3)">Next</button>
+            </div>
+        </div>
+
+    
+       <div class="tab" id="tab3">
+    <div class="section">
+        <h3>Daily Food Habits</h3>
+    </div>
+
+    
+    <div class="section">
+        <strong>Morning (Upon Waking)</strong><br>
+        <label>Time:</label>
+        <input type="time" name="morningTime">
+        <label>What do you consume? (Water, Tea, Coffee, Herbal Drinks, etc.)</label>
+        <input type="text" name="morningItems" placeholder="e.g., Water, Tea">
+        <label>Early Morning Calories</label>
+        <input type="number" name="morningCalories" placeholder="in kcal" min="0">
+    </div>
+
+    
+    <div class="section">
+        <strong>Breakfast</strong><br>
+        <label>Time:</label>
+        <input type="time" name="breakfastTime">
+        <label>Food Items:</label>
+        <input type="text" name="breakfastItems" placeholder="e.g., Poha, Eggs">
+        <label>Portion Size</label>
+        <input type="text" name="breakfastQuantity" placeholder="e.g., 2 eggs, 1 bowl">
+        <label>Breakfast Calories</label>
+        <input type="number" name="breakfastCalories" placeholder="in kcal" min="0">
+    </div>
+
+    
+    <div class="section">
+        <strong>Mid-Morning Snack (if any)</strong><br>
+        <label>Time:</label>
+        <input type="time" name="midSnackTime">
+        <label>Food Items:</label>
+        <input type="text" name="midSnackItems" placeholder="e.g., Fruits, Nuts">
+        <label>Breakfast Calories</label>
+        <input type="number" name="breakfastCalories" placeholder="in kcal" min="0">
+    </div>
+
+  
+    <div class="section">
+        <strong>Lunch</strong><br>
+        <label>Time:</label>
+        <input type="time" name="lunchTime">
+        <label>Food Items:</label>
+        <input type="text" name="lunchItems" placeholder="e.g., Rice, Dal, Vegetables">
+        <label>Portion Size:</label>
+        <input type="text" name="lunchPortion" placeholder="e.g., 1 plate">
+        <label>Breakfast Calories</label>
+        <input type="number" name="breakfastCalories" placeholder="in kcal" min="0">
+    </div>
+
+
+    <div class="section">
+        <strong>Evening Snack</strong><br>
+        <label>Time:</label>
+        <input type="time" name="eveningSnackTime">
+        <label>Food Items:</label>
+        <input type="text" name="eveningSnackItems" placeholder="e.g., Tea, Biscuits">
+    </div>
+
+   
+    <div class="section">
+        <strong>Dinner</strong><br>
+        <label>Time:</label>
+        <input type="time" name="dinnerTime">
+        <label>Food Items:</label>
+        <input type="text" name="dinnerItems" placeholder="e.g., Chapati, Curry">
+        <label>Portion Size:</label>
+        <input type="text" name="dinnerPortion" placeholder="e.g., 2 rotis">
+    </div>
+
+    <div class="section">
+        <strong>Late Night Snacking (if any)</strong><br>
+        <label>Time:</label>
+        <input type="time" name="lateNightTime">
+        <label>Food Items:</label>
+        <input type="text" name="lateNightItems" placeholder="e.g., Milk, Nuts">
+    </div>
+
+    <div class="buttons">
+        <button type="button" class="prev" onclick="prevTab(2)">Previous</button>
+        <button type="button" onclick="nextTab(4)">Next</button>
+    </div>
+</div>
+
+
+        <div class="tab" id="tab4">
+            <div class="section">
+                <label>Sleep Time:</label>
+                <input type="time" name="sleepTime">
+                <label>Wake-up Time:</label>
+                <input type="time" name="wakeTime">
+                <label>Water Intake (Liters/day):</label>
+                <input type="number" name="water" min="1" max="6">
+                <label>Smoking/Alcohol Habits:</label>
+                  <select name="smoking">
+                    <option value="">Select</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+                <label>Stress Level:</label>
+                <select name="stress">
+                    <option value="">Select</option>
+                    <option>Low</option>
+                    <option>Moderate</option>
+                    <option>High</option>
+                </select>
+                 <label>Purpose of diet:</label>
+                <select name="stress">
+                    <option value="">Select</option>
+                    <option>Weight Loss</option>
+                    <option>Weight Gain</option>
+                    <option>Fit Lifestyle</option>
+                </select>
+            </div>
+            <div class="buttons">
+                <button type="button" class="prev" onclick="prevTab(3)">Previous</button>
+                <button type="submit">Submit</button>
+                <button type="reset" class="reset">Reset</button>
+            </div>
+        </div>
+    </form>
+
+    
+
+    <script>
+        function nextTab(tabNumber) {
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            document.getElementById('tab' + tabNumber).classList.add('active');
+        }
+
+        function prevTab(tabNumber) {
+            nextTab(tabNumber);
+        }
+    </script>
+</body>
+</html>
