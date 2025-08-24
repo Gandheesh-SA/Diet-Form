@@ -1,0 +1,94 @@
+ body {
+            font-family: "Montserrat", sans-serif;
+            margin: 30px;
+            background-color: #f9f9f9;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0px 0px 10px #ccc;
+        }
+
+        em{
+            color: yellowgreen;
+        }
+        h2 {
+            text-align: center;
+            
+        }
+        label, strong {
+            font-size: 14px;
+            font-weight: bolder;
+            
+        }
+        input[type=text], input[type=number], input[type=date], select, textarea, input[type=time] {
+            width: 95%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .section {
+            margin-bottom: 15px;
+        }
+        .buttons {
+            text-align: center;
+        }
+        .prev{
+            background-color: blue;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button.reset {
+            background-color: #dc3545;
+        }
+        .tab {
+            display: none;
+        }
+        .tab.active {
+            display: block;
+        }
+
+        .guidelines-info table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.guidelines-info td,
+.guidelines-info th {
+    padding: 10px;
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+}
+
+.guidelines-info tr td.emoji {
+    width: 40px;
+    font-size: 42px;
+    text-align: center;
+}
+
+.guidelines-info th {
+    width: 40%;
+    color: #333;
+    font-weight: 600;
+}
+
+.guidelines-info td:last-child {
+    width: 50%;
+}
+
+.purpose{
+    color: #dc3545;
+}
